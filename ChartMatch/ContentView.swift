@@ -15,8 +15,9 @@ struct ContentView: View {
     var body: some View {
         List {
             Section(header: Text("Chart Match")) {
-                Button("Refresh", action: { currentSongs.refresh()
-                })
+                Button("Refresh") {
+                    currentSongs.refresh()
+                }
             }
             Section(header: Text("Singles")) {
                 ForEach(currentSongs.songs) { song in
@@ -33,8 +34,10 @@ struct ContentView: View {
                         message: Text("\(self.selected!.artist)"),
                         buttons: [
                             .default(Text("Play from this song")) {
+                                playSongs(currentSongs.songsFrom(self.selected!))
                             },
                             .default(Text("Play just this song")) {
+                                playSongs([self.selected!])
                             },
                             .cancel()
                         ]

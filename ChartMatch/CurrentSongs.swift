@@ -34,4 +34,12 @@ final class CurrentSongs: ObservableObject {
             }.resume()
         }
     }
+    
+    func songsFrom(_ song: Song) -> [Song] {
+        if let index = songs.firstIndex(of: song) {
+            return Array(songs.suffix(from: index))
+        } else {
+            return []
+        }
+    }
 }
