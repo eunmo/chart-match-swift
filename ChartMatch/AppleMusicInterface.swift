@@ -13,6 +13,9 @@ func playSongAuthorized(_ songs: [Song]) {
     let ids = songs.map { $0.id }
     systemMusicPlayer.setQueue(with: ids)
     systemMusicPlayer.play()
+    if let url = URL(string: "music://") {
+        UIApplication.shared.open(url)
+    }
 }
 
 func playSongs(_ songs: [Song]) {
