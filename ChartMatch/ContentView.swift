@@ -14,14 +14,18 @@ struct ContentView: View {
     
     var body: some View {
         List {
-            Button("Refresh", action: { currentSongs.refresh()
-            })
-            ForEach(currentSongs.songs) { song in
-                Button(action: {
-                    self.selected = song
-                    self.showAction = true
-                }) {
-                    SongListCellView(song: song)
+            Section(header: Text("Chart Match")) {
+                Button("Refresh", action: { currentSongs.refresh()
+                })
+            }
+            Section(header: Text("Singles")) {
+                ForEach(currentSongs.songs) { song in
+                    Button(action: {
+                        self.selected = song
+                        self.showAction = true
+                    }) {
+                        SongListCellView(song: song)
+                    }
                 }
             }
         }.actionSheet(isPresented: $showAction) {

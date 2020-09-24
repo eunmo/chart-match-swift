@@ -20,6 +20,7 @@ struct SongListCellView: View {
                     .lineLimit(1)
                 Text(verbatim: song.artist)
                     .font(.caption)
+                    .foregroundColor(Color.gray)
                     .lineLimit(1)
                     
                     
