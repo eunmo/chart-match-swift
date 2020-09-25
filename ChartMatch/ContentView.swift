@@ -8,46 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject private var currentSongs: CurrentSongs
-    @State private var selected: Song?
-    @State private var showAction = false
-    
     var body: some View {
-        List {
-            Section(header: Text("Chart Match")) {
-                Button("Refresh") {
-                    currentSongs.refresh()
+        NavigationView {
+            List {
+                NavigationLink(destination: SongListView().environmentObject(CurrentSongs())) {
+                    Text("Current Singles")
+                }
+                NavigationLink(destination: AlbumListView().environmentObject(CurrentAlbums())) {
+                    Text("Current Albums")
                 }
             }
-            Section(header: Text("Singles")) {
-                ForEach(currentSongs.songs) { song in
-                    Button(action: {
-                        self.selected = song
-                        self.showAction = true
-                    }) {
-                        SongListCellView(song: song)
-                    }
-                }
-            }
-        }.actionSheet(isPresented: $showAction) {
-            ActionSheet(title: Text("\(self.selected!.name)"),
-                        message: Text("\(self.selected!.artist)"),
-                        buttons: [
-                            .default(Text("Play from this song")) {
-                                playSongs(currentSongs.songsFrom(self.selected!))
-                            },
-                            .default(Text("Play just this song")) {
-                                playSongs([self.selected!])
-                            },
-                            .cancel()
-                        ]
-            )
+            .navigationBarTitle(Text("Chart Match"))
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(CurrentSongs())
+        ContentView()
     }
 }
