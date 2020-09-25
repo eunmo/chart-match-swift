@@ -14,6 +14,10 @@
 		54354A64251CBFA700FD95FC /* CurrentSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54354A63251CBFA700FD95FC /* CurrentSongs.swift */; };
 		54354A67251CD2AE00FD95FC /* SongListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54354A66251CD2AE00FD95FC /* SongListCellView.swift */; };
 		54354A6A251CF21900FD95FC /* AppleMusicInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54354A69251CF21900FD95FC /* AppleMusicInterface.swift */; };
+		54354A6D251E11C400FD95FC /* CurrentAlbums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54354A6C251E11C400FD95FC /* CurrentAlbums.swift */; };
+		54354A70251E14D100FD95FC /* SongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54354A6F251E14D100FD95FC /* SongListView.swift */; };
+		54354A73251E191400FD95FC /* AlbumListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54354A72251E191400FD95FC /* AlbumListCellView.swift */; };
+		54354A76251E198200FD95FC /* AlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54354A75251E198200FD95FC /* AlbumListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		54354A63251CBFA700FD95FC /* CurrentSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSongs.swift; sourceTree = "<group>"; };
 		54354A66251CD2AE00FD95FC /* SongListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListCellView.swift; sourceTree = "<group>"; };
 		54354A69251CF21900FD95FC /* AppleMusicInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicInterface.swift; sourceTree = "<group>"; };
+		54354A6C251E11C400FD95FC /* CurrentAlbums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAlbums.swift; sourceTree = "<group>"; };
+		54354A6F251E14D100FD95FC /* SongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
+		54354A72251E191400FD95FC /* AlbumListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListCellView.swift; sourceTree = "<group>"; };
+		54354A75251E198200FD95FC /* AlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +68,13 @@
 			children = (
 				54354A51251CBC1900FD95FC /* ChartMatchApp.swift */,
 				54354A53251CBC1900FD95FC /* ContentView.swift */,
+				54354A6F251E14D100FD95FC /* SongListView.swift */,
 				54354A66251CD2AE00FD95FC /* SongListCellView.swift */,
-				54354A69251CF21900FD95FC /* AppleMusicInterface.swift */,
+				54354A75251E198200FD95FC /* AlbumListView.swift */,
+				54354A72251E191400FD95FC /* AlbumListCellView.swift */,
 				54354A63251CBFA700FD95FC /* CurrentSongs.swift */,
+				54354A6C251E11C400FD95FC /* CurrentAlbums.swift */,
+				54354A69251CF21900FD95FC /* AppleMusicInterface.swift */,
 				54354A55251CBC1A00FD95FC /* Assets.xcassets */,
 				54354A5A251CBC1A00FD95FC /* Info.plist */,
 				54354A57251CBC1A00FD95FC /* Preview Content */,
@@ -149,9 +161,13 @@
 			files = (
 				54354A54251CBC1900FD95FC /* ContentView.swift in Sources */,
 				54354A64251CBFA700FD95FC /* CurrentSongs.swift in Sources */,
+				54354A76251E198200FD95FC /* AlbumListView.swift in Sources */,
+				54354A73251E191400FD95FC /* AlbumListCellView.swift in Sources */,
 				54354A6A251CF21900FD95FC /* AppleMusicInterface.swift in Sources */,
 				54354A52251CBC1900FD95FC /* ChartMatchApp.swift in Sources */,
 				54354A67251CD2AE00FD95FC /* SongListCellView.swift in Sources */,
+				54354A70251E14D100FD95FC /* SongListView.swift in Sources */,
+				54354A6D251E11C400FD95FC /* CurrentAlbums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

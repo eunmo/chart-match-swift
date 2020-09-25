@@ -11,7 +11,7 @@ import SwiftUI
 struct ChartMatchApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(CurrentSongs())
+            ContentView()
         }
     }
 }
