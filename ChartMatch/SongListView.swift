@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct SongListView: View {
-    @EnvironmentObject private var currentSongs: CurrentSongs
+    @EnvironmentObject private var songs: CurrentSongs
     @State private var selected: Song?
     @State private var showAction = false
+    var title: String
     
     var body: some View {
         List {
             Section {
-                if currentSongs.loading {
+                if songs.loading {
                     Text("Loading...")
                 } else {
                     Button("Refresh") {
-                        currentSongs.refresh()
+                        songs.refresh()
                     }
                 }
             }
             Section(header: Text("Singles")) {
-                ForEach(currentSongs.songs) { song in
+                ForEach(songs.songs) { song in
                     Button(action: {
                         self.selected = song
                         self.showAction = true
@@ -40,7 +41,7 @@ struct SongListView: View {
                 message: Text("\(self.selected!.artist)"),
                 buttons: [
                     .default(Text("Play from this song")) {
-                        playSongs(currentSongs.songsFrom(self.selected!))
+                        playSongs(songs.songsFrom(self.selected!))
                     },
                     .default(Text("Play just this song")) {
                         playSongs([self.selected!])
@@ -49,12 +50,12 @@ struct SongListView: View {
                 ]
             )
         }
-        .navigationBarTitle(Text("Current Singles"))
+        .navigationBarTitle(Text(verbatim: title))
     }
 }
 
 struct SongListView_Previews: PreviewProvider {
     static var previews: some View {
-        SongListView().environmentObject(CurrentSongs())
+        SongListView(title: "Title").environmentObject(CurrentSongs(.current))
     }
 }

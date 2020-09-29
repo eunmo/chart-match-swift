@@ -11,11 +11,14 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: SongListView().environmentObject(CurrentSongs())) {
+                NavigationLink(destination: SongListView(title: "Current Singles").environmentObject(CurrentSongs(.current))) {
                     Text("Current Singles")
                 }
                 NavigationLink(destination: AlbumListView().environmentObject(CurrentAlbums())) {
                     Text("Current Albums")
+                }
+                NavigationLink(destination: SongListView(title: "Random Shuffle").environmentObject(CurrentSongs(.shuffle))) {
+                    Text("Random Shuffle")
                 }
             }
             .navigationBarTitle(Text("Chart Match"))
