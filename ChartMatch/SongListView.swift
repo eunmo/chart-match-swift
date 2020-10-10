@@ -9,8 +9,6 @@ import SwiftUI
 
 struct SongListView: View {
     @EnvironmentObject private var songs: CurrentSongs
-    @State private var selected: Song?
-    @State private var showAction = false
     var title: String
     
     var body: some View {
@@ -27,28 +25,12 @@ struct SongListView: View {
             Section(header: Text("Singles")) {
                 ForEach(songs.songs) { song in
                     Button(action: {
-                        self.selected = song
-                        self.showAction = true
+                        playSongs(songs.songsFrom(song))
                     }) {
                         SongListCellView(song: song)
                     }
                 }
             }
-        }
-        .actionSheet(isPresented: $showAction) {
-            ActionSheet(
-                title: Text("\(self.selected!.name)"),
-                message: Text("\(self.selected!.artist)"),
-                buttons: [
-                    .default(Text("Play from this song")) {
-                        playSongs(songs.songsFrom(self.selected!))
-                    },
-                    .default(Text("Play just this song")) {
-                        playSongs([self.selected!])
-                    },
-                    .cancel()
-                ]
-            )
         }
         .navigationBarTitle(Text(verbatim: title))
     }
