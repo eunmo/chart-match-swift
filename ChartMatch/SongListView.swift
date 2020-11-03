@@ -21,6 +21,11 @@ struct SongListView: View {
                         songs.refresh()
                     }
                 }
+                if !songs.songs.isEmpty {
+                    Button("Add to queue") {
+                        queueSongs(songs.songs)
+                    }
+                }
             }
             Section(header: Text("Singles")) {
                 ForEach(songs.songs) { song in
