@@ -13,14 +13,16 @@ struct SongListCellView: View {
     var body: some View {
         HStack {
             Text("\(song.rank)")
+                .foregroundColor(Color.primary)
                 .font(.headline)
                 .frame(width: 25.0)
             VStack(alignment: .leading) {
                 Text(verbatim: song.name)
+                    .foregroundColor(Color.primary)
                     .lineLimit(1)
                 Text(verbatim: song.artist)
                     .font(.caption)
-                    .foregroundColor(Color.gray)
+                    .foregroundColor(Color.secondary)
                     .lineLimit(1)
                     
                     
